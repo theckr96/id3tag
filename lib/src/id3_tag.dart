@@ -20,6 +20,7 @@ class ID3Tag {
   String? get artist => frameWithTypeAndName<TextInformation>('TPE1')?.value;
 
   String? get album => frameWithTypeAndName<TextInformation>('TALB')?.value;
+  Transcription? get lyric => frameWithTypeAndName<Transcription>('USLT');
 
   String? get track => frameWithTypeAndName<TextInformation>('TRCK')?.value;
   String? get trackNumber => track?.split('/').firstIfAny(minLength: 2);
